@@ -2,5 +2,5 @@
 
 <%= render 'form', journal_entry: @journal_entry %>
 
-<%= link_to 'Show', @journal_entry %> |
-<%= link_to 'Back', journal_entries_path %>
+<%= link_to 'Show', accounting_entry_journal_entry_path(params[:accounting_entry_id],@journal_entry.id) %> |
+<%= link_to 'Back', accounting_entry_journal_entries_path(params[:accounting_entry_id]) %>
