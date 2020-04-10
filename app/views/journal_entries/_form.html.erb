@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :amount %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :post_type %>
-    <%= form.text_field :post_type %>
+    <%= form.select(:post_type,JournalEntry::POST_TYPES.map{|trans_type|[trans_type]},{},{class: "form-control"}) %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :account_id %>
-    <%= form.text_field :account_id %>
+    <%= form.select(:account_id,Account.all.map{|account| [account.name,account.id]},{},{class: "form-control"})%>
   </div>
 
-  <div class="field">
-    <%= form.label :accounting_entry_id %>
-    <%= form.text_field :accounting_entry_id %>
-  </div>
+  <%# <div class="form-group"> %>
+    <%# <%= form.label :accounting_entry_id %1> %>
+    <%# <%= form.text_field :accounting_entry_id,class: "form-control" %1> %>
+  <%# </div> %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
 <% end %>
