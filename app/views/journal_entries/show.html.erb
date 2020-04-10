@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @journal_entry.amount %>
+</p>
+
+<p>
+  <strong>Post type:</strong>
+  <%= @journal_entry.post_type %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @journal_entry.account_id %>
+</p>
+
+<p>
+  <strong>Accounting entry:</strong>
+  <%= @journal_entry.accounting_entry_id %>
+</p>
+
+<%= link_to 'Edit', edit_journal_entry_path(@journal_entry) %> |
+<%= link_to 'Back', journal_entries_path %>

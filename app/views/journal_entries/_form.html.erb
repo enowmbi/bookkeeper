@@ -1,0 +1,37 @@
+<%= form_with(model: journal_entry, local: true) do |form| %>
+  <% if journal_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(journal_entry.errors.count, "error") %> prohibited this journal_entry from being saved:</h2>
+
+      <ul>
+        <% journal_entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_type %>
+    <%= form.text_field :post_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :account_id %>
+    <%= form.text_field :account_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accounting_entry_id %>
+    <%= form.text_field :accounting_entry_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
