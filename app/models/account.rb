@@ -1,5 +1,7 @@
 class Account < ApplicationRecord
 
+  has_many :journal_entries
+
   CATEGORIES = %w(Assets Liabilities Equity Revenue Expenses)
 
   validates :name, presence: true, uniqueness: true
