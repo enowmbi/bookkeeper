@@ -10,6 +10,7 @@ class AccountingEntriesController < ApplicationController
   # GET /accounting_entries/1
   # GET /accounting_entries/1.json
   def show
+    @journal_entries = JournalEntry.where(accounting_entry_id: params[:id])
   end
 
   # GET /accounting_entries/new
