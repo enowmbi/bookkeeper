@@ -2,4 +2,4 @@
 
 <%= render 'form', journal_entry: @journal_entry %>
 
-<%= link_to 'Back', journal_entries_path %>
+<%= link_to 'Back', accounting_entry_path(@journal_entry.accounting_entry) %>
