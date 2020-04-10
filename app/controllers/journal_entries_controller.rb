@@ -14,7 +14,7 @@ class JournalEntriesController < ApplicationController
 
   # GET /journal_entries/new
   def new
-    @journal_entry = JournalEntry.new
+    @journal_entry = AccountingEntry.find(params[:accounting_entry_id]).journal_entries.build
   end
 
   # GET /journal_entries/1/edit
