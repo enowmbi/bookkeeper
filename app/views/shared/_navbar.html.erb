@@ -5,15 +5,27 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <%= link_to('Home',root_path, class:"nav-link") %>
+        <%= link_to('Home',root_path, class:"nav-link h5") %>
       </li>
       <li class="nav-item">
-        <%= link_to('Chart of Accounts',accounts_path,class: 'nav-link') %>
+        <%= link_to('Chart of Accounts',accounts_path,class: 'nav-link h5') %>
       </li>
       <li class="nav-item">
-        <%= link_to('Accounting Entries',accounting_entries_path,class: 'nav-link') %>
+        <%= link_to('Accounting Entries',accounting_entries_path,class: 'nav-link h5') %>
+      </li>
+      <li class="nav-item dropdown h5">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Reports
+          </a> 
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Trial Balance</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Income Statement</a>
+          <a class="dropdown-item" href="#">Balance Sheet</a>
+          <a class="dropdown-item" href="#">Cashflow Statement</a>
+        </div>
       </li>
   </div>
 </nav>
