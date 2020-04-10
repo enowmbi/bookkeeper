@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <%= link_to("<h1> #{t('app_name')}</h1>".html_safe,root_path,class:"navbar-brand") %>
+  <%= link_to("<h1> #{t('app_name')}</h1>".html_safe,root_path,class:"navbar-brand") %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,6 +11,9 @@
       </li>
       <li class="nav-item">
         <%= link_to('Chart of Accounts',accounts_path,class: 'nav-link') %>
+      </li>
+      <li class="nav-item">
+        <%= link_to('Accounting Entries',accounting_entries_path,class: 'nav-link') %>
       </li>
   </div>
 </nav>
