@@ -1,17 +1,27 @@
-<p>
-  <strong>Date prepared:</strong>
-  <%= @accounting_entry.date_prepared %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <strong>Date prepared:</strong>
+      <%= @accounting_entry.date_prepared %>
+    </p>
 
-<p>
-  <strong>Date posted:</strong>
-  <%= @accounting_entry.date_posted %>
-</p>
+    <p>
+      <strong>Date posted:</strong>
+      <%= @accounting_entry.date_posted %>
+    </p>
 
+    <p>
+      <strong>Memo:</strong>
+      <%= @accounting_entry.memo %>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <%= link_to 'Edit', edit_accounting_entry_path(@accounting_entry),class: "btn btn-outline-warning" %> |
+    <%= link_to 'Back', accounting_entries_path,class: "btn btn-outline-info" %>
+  </div>
+</div>
+<hr/>
 <p>
-  <strong>Memo:</strong>
-  <%= @accounting_entry.memo %>
-</p>
+  <%= link_to('Add Journal Entry',new_accounting_entry_journal_entry_path(@accounting_entry), class: "btn btn-primary") %>
+  </p>
 
-<%= link_to 'Edit', edit_accounting_entry_path(@accounting_entry),class: "btn btn-outline-warning" %> |
-<%= link_to 'Back', accounting_entries_path,class: "btn btn-outline-info" %>
