@@ -17,14 +17,16 @@
       </li>
       <li class="nav-item dropdown h5">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Reports
-          </a> 
+          Reports
+        </a> 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Trial Balance</a>
+          <%= link_to('Trial Balance',reports_trial_balance_path,class:"dropdown-item") %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Income Statement</a>
-          <a class="dropdown-item" href="#">Balance Sheet</a>
-          <a class="dropdown-item" href="#">Cashflow Statement</a>
+          <%= link_to('Income Statement',reports_income_statement_path,class:"dropdown-item") %>
+          <div class="dropdown-divider"></div>
+          <%= link_to('Balance Sheet',reports_balance_sheet_path,class:"dropdown-item") %>
+          <div class="dropdown-divider"></div>
+          <%= link_to('Cashflow Statement',reports_cashflow_statement_path,class:"dropdown-item") %>
         </div>
       </li>
   </div>
