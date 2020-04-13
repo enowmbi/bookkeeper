@@ -1,2 +1,47 @@
-<h1>Reports#trial_balance</h1>
-<p>Find me in app/views/reports/trial_balance.html.erb</p>
+<div class="container">
+  <%= form_with(url: reports_trial_balance_path,local: true, method: :get) do |f| %>
+    <div class="row my-5">
+      <div class="col-md-4 text-right">
+        <h5>Please select a date:</h5>
+      </div>
+      <div class="col-md-4">
+        <%= f.date_field :date,{value: @as_of_date.to_s(:db),class:'form-control'} %>
+      </div>
+      <div class="col-md-4">
+        <%= submit_tag('Generate Trial Balance',class: 'btn btn-primary') %>
+      </div>
+    </div>
+  <% end %>
+  <p></p>
+  <div class="text-center">
+    <h3><%= "Trial Balance as of #{@as_of_date.to_s(:long)}" %></h3>
+  </div>
+  <p></p>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Account</th>
+        <th class="text-right">Debit</th>
+        <th class="text-right">Credit</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @entries.each do |entry| %>
+        <tr>
+          <td><%= "#{entry['name']} - #{entry['code']}" %></td>
+          <td class="text-right"><%= number_to_currency(entry['debit']) %></td>
+          <td class="text-right"><%= number_to_currency(entry['credit'])  %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td><strong> Total </strong> </td>
+        <td class="text-right"><strong><%= number_to_currency(@entries.reduce(0){|sum,entry| sum +  entry['debit'].to_f }) %></strong></td>
+        <td class="text-right"><strong><%= number_to_currency(@entries.reduce(0){|sum,entry| sum + entry['credit'].to_f }) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
