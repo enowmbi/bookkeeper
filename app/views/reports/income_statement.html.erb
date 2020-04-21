@@ -1,2 +1,51 @@
-<h1>Reports#income_statement</h1>
-<p>Find me in app/views/reports/income_statement.html.erb</p>
+<div class="container">
+  <%= form_with(url: reports_income_statement_path,local: true, method: :get) do |f| %>
+    <div class="row my-5">
+      <div class="col-md-4 text-right">
+        <h5>Please select a date range :</h5>
+      </div>
+      <div class="col-md-4">
+        From: <%= f.date_field :date_from,{value: @date_from.to_s(:db),class:'form-control'} %>
+      </div>
+      <div class="col-md-4">
+        To: <%= f.date_field :date_to,{value: @date_to.to_s(:db),class:'form-control'} %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= submit_tag('Generate Income Statement',class: 'btn btn-primary') %>
+    </div>
+  <% end %>
+  <p></p>
+  <div class="text-center">
+    <h3>Income Statement (Statement of Comprehensive Income) </h3>
+    <h4><%= "#{@date_from.to_s(:long)} - #{@date_to.to_s(:long)}" %></h4>
+  </div>
+  <p></p>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Account</th>
+        <th class="text-right">Debit</th>
+        <th class="text-right">Credit</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @entries.each do |entry| %>
+        <tr>
+          <td><%= "#{entry['name']} - #{entry['code']}" %></td>
+          <td class="text-right"><%= number_to_currency(entry['debit']) %></td>
+          <td class="text-right"><%= number_to_currency(entry['credit'])  %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td><strong> Total </strong> </td>
+        <td class="text-right"><strong><%= number_to_currency(@entries.reduce(0){|sum,entry| sum +  entry['debit'].to_f }) %></strong></td>
+        <td class="text-right"><strong><%= number_to_currency(@entries.reduce(0){|sum,entry| sum + entry['credit'].to_f }) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
