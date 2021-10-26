@@ -48,7 +48,7 @@ class ReportsController < ApplicationController
   end
 
 
-  def income_statement_query(date_from,date_to)
+  def income_statement_query(date_from, date_to)
     query = "SELECT 
     accounts.id,
       accounts.code,
