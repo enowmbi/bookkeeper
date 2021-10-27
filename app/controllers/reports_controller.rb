@@ -12,7 +12,6 @@ class ReportsController < ApplicationController
   def income_statement
     @date_from = reporting_date(params[:date_from])
     @date_to = reporting_date(params[:date_to])
-    byebug
     @entries = Reports::IncomeStatementQuery.new(date_from: @date_from, date_to: @date_to).call
   end
 
