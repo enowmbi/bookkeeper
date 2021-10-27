@@ -29,9 +29,10 @@ This application does not use cache servers, search engines or job queues at the
 * Deployment instructions
 ## Running application without without Docker
 You can run the application locally without using Docker if you have Ruby 3.0.0 installed. The other gems can be installed by running the following command:
-`bundle install` 
-You can run `rails s` to run the application
-Then point your browswer to http://localhost:3000 to view app
+1. `bundle install` 
+2. Replace db with localhost as the host value in database.yml
+3. Run `rails s` to run the application
+4. Then point your browswer to http://localhost:3000 to view app
 
 ## Running application inside Docker container
 This is the preferred way to run the application.
