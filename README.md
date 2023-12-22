@@ -3,7 +3,8 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## Intro
+This is a simple web application built with Ruby on Rails. It can be used for basic accounting and can be run using docker. 
 
 * Ruby version
 This app uses Ruby 3.0.0
@@ -11,20 +12,7 @@ This app uses Ruby 3.0.0
 * System dependencies
 Depends on Rails 6.1.4, Postgresql 9.3
 
-* Configuration
 
-* Database creation
-See the deployment instructions below for details 
-
-
-* Database initialization
-See the deployment instructions below for details
-
-* How to run the test suite
-Working on creating test suite for this app. Users should be able to run test suite in docker and also without docker
-
-* Services (job queues, cache servers, search engines, etc.)
-This application does not use cache servers, search engines or job queues at the moment
 
 * Deployment instructions
 ## Running application without without Docker
